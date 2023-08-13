@@ -1,2 +1,7 @@
-package com.doodle.testcode;public class StudyStatus {
+package com.doodle.testcode;
+
+public enum StudyStatus {
+
+  TODO, DOING, DONE;
+
 }
