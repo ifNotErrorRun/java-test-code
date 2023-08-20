@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 @Test
-@Tag("fast")
-public @interface FastTest {
+@Tag("slow")
+public @interface SlowTest {
 
 }
