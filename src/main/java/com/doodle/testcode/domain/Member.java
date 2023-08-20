@@ -1,2 +1,5 @@
-package com.doodle.testcode;public class Member {
+package com.doodle.testcode.domain;
+
+public class Member {
+
 }

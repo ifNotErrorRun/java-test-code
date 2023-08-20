@@ -1,5 +1,9 @@
-package com.doodle.testcode;
+package com.doodle.testcode.member;
 
-public class MemberService {
+import com.doodle.testcode.domain.Member;
+import java.util.Optional;
 
+public interface MemberService {
+
+  Optional<Member> findById(Long memberId) throws MemberNotFoundException;
 }

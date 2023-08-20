@@ -1,4 +1,4 @@
-package com.doodle.testcode;
+package com.doodle.testcode.study;
 
 public enum StudyStatus {
 

@@ -1,5 +1,6 @@
-package com.doodle.testcode;
+package com.doodle.testcode.domain;
 
+import com.doodle.testcode.study.StudyStatus;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -13,6 +14,8 @@ public class Study {
 
   private int limit;
 
+  private Member member;
+
   public Study() {
     this.status = StudyStatus.TODO;
   }
@@ -21,9 +24,13 @@ public class Study {
     this.status = status;
   }
 
-  public Study(String name, int limit) {
+  public     Study(String name, int limit) {
     this();
     this.name = name;
     this.limit = limit;
+  }
+
+  public void setOwner(Member     member) {
+    this.member = member;
   }
 }

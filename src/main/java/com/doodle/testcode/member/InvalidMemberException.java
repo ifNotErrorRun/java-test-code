@@ -1,5 +1,5 @@
 package com.doodle.testcode.member;
 
-public class MemberNotFoundException extends Exception {
+public class InvalidMemberException extends Exception {
 
 }
