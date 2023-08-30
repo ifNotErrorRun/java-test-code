@@ -23,13 +23,17 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
+    implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.data:spring-data-jpa")
+    implementation("jakarta.persistence:jakarta.persistence-api")
+    implementation("org.postgresql:postgresql:42.2.27")
     compileOnly("org.projectlombok:lombok")
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-//    testImplementation("org.springframework.boot:spring-boot-testcontainers")
+    testImplementation("org.springframework.boot:spring-boot-testcontainers")
+    testImplementation("org.testcontainers:postgresql:1.19.0")
     testImplementation("org.testcontainers:junit-jupiter")
 }
 

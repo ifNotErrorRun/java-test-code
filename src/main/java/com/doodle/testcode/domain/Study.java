@@ -1,36 +1,43 @@
 package com.doodle.testcode.domain;
 
-import com.doodle.testcode.study.StudyStatus;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import java.time.LocalDateTime;
 import lombok.Getter;
-import lombok.ToString;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@ToString
+@Entity
 @Getter
+@Setter
+@NoArgsConstructor
 public class Study {
 
-  private final StudyStatus status;
-
+  @Id
+  @GeneratedValue
+  private long id;
   private String name;
-
   private int limit;
+  private StudyStatus status = StudyStatus.TODO;
+  private LocalDateTime openedDateTime;
 
-  private Member member;
-
-  public Study() {
-    this.status = StudyStatus.TODO;
-  }
-
-  public Study(StudyStatus status) {
-    this.status = status;
-  }
-
-  public     Study(String name, int limit) {
+  public Study(String name, int limit) {
     this();
     this.name = name;
     this.limit = limit;
   }
 
-  public void setOwner(Member     member) {
-    this.member = member;
+  public void open() {
+    this.status = StudyStatus.OPENED;
+    this.openedDateTime = LocalDateTime.now();
+  }
+
+  public long getOwnerId() {
+    return this.id;
+  }
+
+  public void setOwnerId(Long memberId) {
+    this.id = memberId;
   }
 }

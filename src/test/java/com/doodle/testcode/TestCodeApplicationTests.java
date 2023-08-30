@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import com.doodle.testcode.domain.Study;
-import com.doodle.testcode.study.StudyStatus;
+import com.doodle.testcode.domain.StudyStatus;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -29,10 +29,9 @@ import org.junit.jupiter.params.provider.CsvSource;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class TestCodeApplicationTests {
 
-  int value = 1;
-
   @RegisterExtension
   static FindSlowTestExtension findSlowTestExtension = new FindSlowTestExtension(1000L);
+  int value = 1;
 
   @BeforeAll
   static void beforeAll() {
