@@ -34,10 +34,10 @@ class ServiceTest {
     given(studyRepository.save(study)).willReturn(study);
 
     //When
-    studyService.openStudy(study);
+    Study openedStudy = studyService.openStudy(study);
 
     //Then
-    Assertions.assertEquals(StudyStatus.OPENED, study.getStatus());
+    Assertions.assertEquals(StudyStatus.OPENED, openedStudy.getStatus());
     Assertions.assertNotNull(study.getOpenedDateTime());
     then(memberService).should().notify(study);
   }

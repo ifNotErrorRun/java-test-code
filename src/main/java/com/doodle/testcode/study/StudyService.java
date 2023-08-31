@@ -13,8 +13,12 @@ public class StudyService {
 
 
   public StudyService(MemberService memberService, StudyRepository repository) {
-    assert memberService != null;
-    assert repository != null;
+    if (memberService == null) {
+      throw new IllegalArgumentException("Invalid MemberService");
+    }
+    if (repository == null) {
+      throw new IllegalArgumentException("Invalid StudyRepository");
+    }
     this.memberService = memberService;
     this.repository = repository;
   }
@@ -36,10 +40,6 @@ public class StudyService {
     Study openedStudy = repository.save(study);
     memberService.notify(openedStudy);
     return openedStudy;
-  }
-
-  public void hi() {
-
   }
 
 }

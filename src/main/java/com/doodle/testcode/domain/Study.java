@@ -4,28 +4,27 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import java.time.LocalDateTime;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 
+@Data
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
 public class Study {
 
   @Id
   @GeneratedValue
   private long id;
   private String name;
-  private int limit;
+  private int limitMember;
   private StudyStatus status = StudyStatus.TODO;
   private LocalDateTime openedDateTime;
 
-  public Study(String name, int limit) {
+  public Study(String name, int limitMember) {
     this();
     this.name = name;
-    this.limit = limit;
+    this.limitMember = limitMember;
+  }
+
+  public Study() {
   }
 
   public void open() {

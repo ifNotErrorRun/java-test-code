@@ -71,10 +71,10 @@ class StudyServiceTest {
     given(memberService.findById(1L)).willReturn(Optional.of(member));
 
     // When
-    studyService.createNewStudy(1L, study);
+    Study openedStudy = studyService.createNewStudy(1L, study);
 
     // Then
-    assertEquals(1L, study.getOwnerId());
+    assertEquals(1L, openedStudy.getOwnerId());
     then(memberService).should(times(1)).notify(study);
     then(memberService).shouldHaveNoMoreInteractions();
   }
